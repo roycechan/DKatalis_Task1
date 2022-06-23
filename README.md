@@ -20,6 +20,15 @@ $ docker-compose --verbose up -d
 - *Note: Transactions table is defined but data is not imported from completedtrans.csv due to large file size*
 ### Run SQL queries 
 - SQL queries used to populate insights are found in `sql` folder
+```
+Page 3
+- sql/average_service_time_by_server_1.sql
+- sql/average_service_time_by_server_2.sql
+- sql/average_service_time_by_server_3.sql
+Page 4
+- sql/average_service_time_by_response_and_dispute_1.sql
+- sql/average_service_time_by_response_and_dispute_2.sql
+```
 - Run a test query
 ```
 $ docker-compose exec postgres psql -U postgres -d crm -c "SELECT * FROM loan LIMIT 5"
