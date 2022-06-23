@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - network
+    environment:
+      POSTGRES_USER: postgres # The PostgreSQL user (useful to connect to the database)
+      POSTGRES_PASSWORD: postgres # The PostgreSQL password (useful to connect to the database)
+      POSTGRES_DB: crm
+    volumes:
+      - ./sql/crm.sql:/docker-entrypoint-initdb.d/crm.sql
+      - ./csvs:/var/lib/postgresql/csvs
+      - ./sql:/var/lib/postgresql/sql
+      - ./postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+networks:
+  network:
+    driver: bridge
