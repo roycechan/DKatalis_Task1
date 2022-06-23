@@ -2,8 +2,11 @@
 ## Folder Structure
 ```
 +-- csvs                  // folder containing .csv files found in retail-banking-demo-data
+|   +-- ...
 +-- sql                   // folder containing .sql files for init and queries
+|   +-- ...
 +-- insights              // folder containing presentation that summarises findings for Task 1
+|   +-- ...
 +-- docker-compose.yaml   // build instructions
 ```
 ## ER Diagram
